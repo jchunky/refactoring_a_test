@@ -1,5 +1,5 @@
 class Invoice
-  attr_accessor :line_items
+  attr_accessor :line_items, :customer
 
   def initialize(args)
     @customer = args.fetch(:customer)
@@ -11,6 +11,4 @@ class Invoice
   end
 
   private
-
-  attr_accessor :customer
 end
