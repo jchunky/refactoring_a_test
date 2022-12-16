@@ -17,7 +17,7 @@ RSpec.describe RefactoringATest do
   end
 
   it "add_item_quantity several quantity v1" do
-    #  Set  up  fixture
+    # Set up fixture
     billing_address = FactoryBot.create(
       :address,
       street: "1222 1st St SW",
@@ -46,10 +46,10 @@ RSpec.describe RefactoringATest do
     product = FactoryBot.create(:product, number: 88, code: "SomeWidget", unit_price: BigDecimal("19.99"))
     invoice = FactoryBot.create(:invoice, customer:)
 
-    # Exercise  SUT
+    # Exercise SUT
     invoice.add_item_quantity(product, 5)
 
-    # Verify  outcome
+    # Verify outcome
     line_items = invoice.line_items
     if line_items.size == 1
       item = line_items[0]
@@ -62,12 +62,5 @@ RSpec.describe RefactoringATest do
     else
       expect(false).to eq(true)
     end
-  ensure
-    # Teardown
-    DB.delete(billing_address)
-    DB.delete(shipping_address)
-    DB.delete(customer)
-    DB.delete(product)
-    DB.delete(invoice)
   end
 end

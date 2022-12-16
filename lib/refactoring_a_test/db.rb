@@ -18,12 +18,20 @@ class DB
     instance.delete(object)
   end
 
+  def self.clear
+    instance.clear
+  end
+
   def save(object)
     @objects << object
   end
 
   def delete(object)
     @objects.delete(object)
+  end
+
+  def clear
+    @objects = []
   end
 
   def all

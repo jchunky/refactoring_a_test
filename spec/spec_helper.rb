@@ -18,6 +18,6 @@ RSpec.configure do |config|
   end
 
   config.after do
-    expect(DB.instance.all).to be_empty, "The test fixture was not properly cleaned up. This could lead to transient tests"
+    DB.instance.clear
   end
 end
