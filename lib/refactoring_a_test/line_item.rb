@@ -1,13 +1,4 @@
-class LineItem
-  attr_accessor :invoice, :product, :quantity, :percent_discount
-
-  def initialize(invoice, product, quantity, percent_discount)
-    @invoice = invoice
-    @product = product
-    @quantity = quantity
-    @percent_discount = percent_discount
-  end
-
+LineItem = Struct.new(:invoice, :product, :quantity, :percent_discount) do
   def unit_price
     product.unit_price
   end
