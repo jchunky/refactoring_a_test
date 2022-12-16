@@ -8,15 +8,7 @@ RSpec.describe RefactoringATest do
 
     invoice.add_item_quantity(product, 5)
 
-    expect(invoice.line_items).to contain_exactly(
-      having_attributes(
-        invoice:,
-        product:,
-        quantity: 5,
-        percent_discount: 30,
-        unit_price: BigDecimal("19.99"),
-        extended_price: BigDecimal("69.97")
-      )
-    )
+    expected = LineItem.new(invoice, product, 5, 30)
+    expect(invoice.line_items).to contain_exactly(expected)
   end
 end
