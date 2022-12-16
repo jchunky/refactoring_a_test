@@ -1,11 +1,12 @@
-/.bundle/
-/.yardoc
-/_yardoc/
-/coverage/
-/doc/
-/pkg/
-/spec/reports/
-/tmp/
-
-# rspec failure tracking
+*.log
+.bundle
+.config
+.DS_Store
+.gem
+.git
+.guard_history
+.idea
+.local
+.node-gyp
 .rspec_status
+node_modules

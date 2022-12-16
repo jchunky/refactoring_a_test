@@ -1,8 +1,8 @@
 class Invoice
   attr_accessor :line_items
 
-  def initialize(customer:)
-    @customer = customer
+  def initialize(args)
+    @customer = args.fetch(:customer)
     @line_items = []
   end
 
