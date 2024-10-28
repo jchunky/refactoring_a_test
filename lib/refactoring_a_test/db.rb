@@ -1,13 +1,9 @@
-require 'singleton'
+require "singleton"
 
 # This class simulates a DB
 # Assume its API is fixed and it cannot change
 class DB
   include Singleton
-
-  def initialize
-    @objects = []
-  end
 
   def self.save(object)
     instance.save(object)
@@ -15,6 +11,10 @@ class DB
 
   def self.delete(object)
     instance.delete(object)
+  end
+
+  def initialize
+    @objects = []
   end
 
   def save(object)

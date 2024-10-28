@@ -1,4 +1,3 @@
-
 class LineItem
   attr_accessor :invoice, :product, :quantity, :percent_discount
 
@@ -9,9 +8,7 @@ class LineItem
     @percent_discount = percent_discount
   end
 
-  def unit_price
-    product.unit_price
-  end
+  delegate :unit_price, to: :product
 
   def extended_price
     (product.unit_price * quantity * (1 - discount)).round(2)
