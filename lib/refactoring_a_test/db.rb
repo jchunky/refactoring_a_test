@@ -13,6 +13,10 @@ class DB
     instance.delete(object)
   end
 
+  def self.delete_all
+    instance.delete_all
+  end
+
   def initialize
     @objects = []
   end
@@ -23,6 +27,10 @@ class DB
 
   def delete(object)
     @objects.delete(object)
+  end
+
+  def delete_all
+    @objects = []
   end
 
   def all

@@ -4,6 +4,8 @@ FactoryBot.define do
       new(attributes)
     end
 
+    customer { create(:customer) }
+
     to_create do |instance|
       DB.save(instance)
       instance
