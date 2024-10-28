@@ -1,5 +1,3 @@
-require "bigdecimal"
-
 RSpec.describe RefactoringATest do
   it "add_item_quantity several quantity v1" do
     customer = create(:customer, percent_discount: 30)
